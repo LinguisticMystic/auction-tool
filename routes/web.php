@@ -14,7 +14,7 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout']);
 
 //Admin
-Route::get('/admin', [AdminController::class, 'mainView']);
+Route::get('/admin', [AdminController::class, 'loginView']);
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'dashboardView']);
     Route::get('/admin/change-password', [AdminController::class, 'changePassword']);

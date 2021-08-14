@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bid;
 use Illuminate\Contracts\View\View;
 
 class AdminController extends Controller
@@ -9,9 +10,13 @@ class AdminController extends Controller
     /**
      * @return View
      */
-    public function mainView(): View
+    public function loginView(): View
     {
-        return view('admin.login');
+        $bids = Bid::all();
+
+        return view('admin.login', [
+            'bids' => $bids
+        ]);
     }
 
     /**

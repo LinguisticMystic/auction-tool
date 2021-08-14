@@ -15,9 +15,10 @@ class CreateAuctionItemsTable extends Migration
     {
         Schema::create('auction_items', function (Blueprint $table) {
             $table->id();
-            $table->integer('starting bid');
-            $table->string('path_to_QR');
+            $table->integer('starting_bid');
+            $table->string('path_to_QR_image')->nullable();
             $table->string('path_to_item_image');
+            $table->string('original_file_name');
             $table->timestamps();
         });
     }
