@@ -24,7 +24,7 @@ class FileUploadRequest extends FormRequest
     public function rules()
     {
         return [
-            'image' => 'required',
+            'image' => 'required|image|mimes:jpeg,jpg|max:1024',
             'starting_bid' => [
                 'required',
                 'regex:/^\d+([\.\,]\d{1,2})?$/'

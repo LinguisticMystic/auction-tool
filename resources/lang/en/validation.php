@@ -143,7 +143,10 @@ return [
             'required' => 'Enter password',
         ],
         'image' => [
-            'required' => 'Add a file'
+            'required' => 'Add a file',
+            'image' => 'The file must be an image',
+            'mimes' => 'The file must be of type :values',
+            'max' => 'The :attribute must not be greater than :max kilobytes'
         ],
         'starting_bid' => [
             'required' => 'Enter a starting bid',

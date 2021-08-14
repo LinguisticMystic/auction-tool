@@ -143,7 +143,11 @@ return [
             'required' => 'Ievadiet paroli',
         ],
         'image' => [
-            'required' => 'Pievienojiet failu'
+            'required' => 'Pievienojiet failu',
+            'image' => 'Pievienojamais fails nav attēls',
+            'mimes' => 'Failam jābūt :values formātā',
+            'max' => 'Attēls nedrīkst pārsniegt :max kilobaitus'
+
         ],
         'starting_bid' => [
             'required' => 'Ievadiet sākuma cenu',

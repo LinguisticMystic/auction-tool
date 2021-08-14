@@ -7,7 +7,7 @@
 @section('content')
     <h1>{{__('controls.add_new_item')}}</h1>
 
-    <form action="/auction-items/store" method="post">
+    <form action="/auction-items/store" method="post" enctype="multipart/form-data">
         @csrf
 
         <label>{{__('forms.image')}}: </label>
