@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateBiddersTable extends Migration
+class CreateBidsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,12 @@ class CreateBiddersTable extends Migration
      */
     public function up()
     {
-        Schema::create('bidders', function (Blueprint $table) {
+        Schema::create('bids', function (Blueprint $table) {
             $table->id();
             $table->integer('auction_item_id');
-            $table->string('name');
-            $table->string('phone');
+            $table->integer('bid_amount');
+            $table->string('bidder_name');
+            $table->string('bidder_phone');
             $table->timestamps();
         });
     }
@@ -29,6 +30,6 @@ class CreateBiddersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('bidders');
+        Schema::dropIfExists('bids');
     }
 }
