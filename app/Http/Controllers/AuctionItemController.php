@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\FileUploadRequest;
 use App\Models\AuctionItem;
+use BaconQrCode\Renderer\ImageRenderer;
+use BaconQrCode\Renderer\Image\ImagickImageBackEnd;
+use BaconQrCode\Renderer\RendererStyle\RendererStyle;
+use BaconQrCode\Writer;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
@@ -30,8 +34,21 @@ class AuctionItemController extends Controller
             'original_file_name' => $originalFileName
         ]);
 
-        //generate QR
+        // Generate QR
+        $image = explode('.', $image);
+        $image = $image[0] . '_QR.' . $image[1];
 
+        $renderer = new ImageRenderer(
+            new RendererStyle(400),
+            new ImagickImageBackEnd()
+        );
+
+        $writer = new Writer($renderer);
+        $writer->writeFile(\URL::to('/auction-items/' . $auctionItem->id), 'storage/' . $image);
+
+        \DB::table('auction_items')
+            ->where('id', $auctionItem->id)
+            ->update(['path_to_QR_image' => $image]);
     }
 
     public function show(int $id): View
