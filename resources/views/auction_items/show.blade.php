@@ -11,7 +11,7 @@
 
     @if(\Auth::check())
         <p><strong>Starting bid:</strong> €{{ $auctionItem->starting_bid }}</p>
-        <p><a href="/auction-items/{{ $auctionItem->id }}/qr">Print QR code</a></p>
+        <p><a href="/auction-items/{{ $auctionItem->id }}/qr" target="_blank">Print QR code</a></p>
     @endif
 
 @endsection

@@ -1,12 +1,6 @@
-@extends('layout')
+<title> {{ 'QR #'. $id }}</title>
 
-@section('title')
-    {{ 'QR #'. $id }}
-@endsection
+<h1>{{ 'QR #'. $id }}</h1>
 
-@section('content')
-    <h1>{{ 'QR #'. $id }}</h1>
+<img class="auction-item" src="{{ asset('storage/' . $auctionItem->path_to_QR_image) }}">
 
-    <img class="auction-item" src="{{ asset('storage/' . $auctionItem->path_to_QR_image) }}">
-
-@endsection
