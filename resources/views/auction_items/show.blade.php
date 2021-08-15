@@ -10,8 +10,8 @@
     <img class="auction-item" src="{{ asset('storage/' . $auctionItem->path_to_item_image) }}">
 
     @if(\Auth::check())
-        <p><strong>Starting bid:</strong> €{{ $auctionItem->starting_bid }}</p>
-        <p><a href="/auction-items/{{ $auctionItem->id }}/qr" target="_blank">Print QR code</a></p>
+        <p><strong>{{ __('forms.starting_bid') }}: </strong>€{{ $auctionItem->starting_bid }}</p>
+        <p><a href="/auction-items/{{ $auctionItem->id }}/qr" target="_blank">{{ __('controls.print_qr_code') }}</a></p>
     @endif
 
 @endsection

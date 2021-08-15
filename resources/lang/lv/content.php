@@ -1,5 +1,5 @@
 <?php
 
 return [
-    'name' => 'Name',
+    'welcome' => 'Laipni lūgti!'
 ];

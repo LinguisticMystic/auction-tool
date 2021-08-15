@@ -6,4 +6,5 @@ return [
     'change_password' => 'Paroles maiņa',
     'add_new_item' => 'Pievienot jaunu izsoles priekšmetu',
     'submit' => 'Pievienot',
+    'print_qr_code' => 'Printēt QR kodu',
 ];

@@ -6,4 +6,5 @@ return [
     'change_password' => 'Change password',
     'add_new_item' => 'Add new auction item',
     'submit' => 'Submit',
+    'print_qr_code' => 'Print QR code',
 ];
