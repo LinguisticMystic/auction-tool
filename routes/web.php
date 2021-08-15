@@ -23,3 +23,5 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/auction-items/create', [AuctionItemController::class, 'create']);
     Route::post('/auction-items/store', [AuctionItemController::class, 'store']);
 });
+
+Route::get('/auction-items/{id}', [AuctionItemController::class, 'show']);

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Bid;
+use App\Models\AuctionItem;
 use Illuminate\Contracts\View\View;
 
 class AdminController extends Controller
@@ -12,11 +12,7 @@ class AdminController extends Controller
      */
     public function loginView(): View
     {
-        $bids = Bid::all();
-
-        return view('admin.login', [
-            'bids' => $bids
-        ]);
+        return view('admin.login');
     }
 
     /**
@@ -24,6 +20,19 @@ class AdminController extends Controller
      */
     public function dashboardView(): View
     {
-        return view('admin.dashboard');
+        $auctionItems = AuctionItem::all();
+
+        return view('admin.dashboard',
+            [
+                'auctionItems' => $auctionItems
+            ]);
+    }
+
+    /**
+     * @return View
+     */
+    public function changePassword(): View
+    {
+        return view('admin.change_password');
     }
 }

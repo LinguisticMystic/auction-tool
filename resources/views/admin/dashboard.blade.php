@@ -22,13 +22,17 @@
             <th>Current bid</th>
             <th>Bidder</th>
             <th>Phone</th>
+            <th></th>
         </tr>
-        <tr>
-            <td>1</td>
-            <td>€678</td>
-            <td>Aija</td>
-            <td>2983877</td>
-        </tr>
+        @foreach($auctionItems as $auctionItem)
+            <tr>
+                <td>{{ $auctionItem->id }}</td>
+                <td>Current bid</td>
+                <td>Name</td>
+                <td>Number</td>
+                <td><a href="/auction-items/{{ $auctionItem->id }}">👁</a></td>
+            </tr>
+        @endforeach
     </table>
 
 @endsection

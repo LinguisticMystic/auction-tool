@@ -10,11 +10,6 @@ use Illuminate\Support\Facades\Storage;
 
 class AuctionItemController extends Controller
 {
-    public function index()
-    {
-        return AuctionItem::all();
-    }
-
     public function create(): View
     {
         return view('auction_items.create');
@@ -27,7 +22,7 @@ class AuctionItemController extends Controller
         $image = $request->file('image');
         $originalFileName = $request->file('image')->getClientOriginalName();
 
-        $image = Storage::disk('local')->put('images', $image);
+        $image = Storage::disk('public')->put('images', $image);
 
         $auctionItem = AuctionItem::create([
             'starting_bid' => $startingBid,
@@ -39,9 +34,14 @@ class AuctionItemController extends Controller
 
     }
 
-    public function show()
+    public function show(int $id): View
     {
+        $auctionItem = AuctionItem::where('id', $id)->first();
 
+        return view('auction_items.show',
+            [
+                'auctionItem' => $auctionItem
+            ]);
     }
 
     public function edit()
