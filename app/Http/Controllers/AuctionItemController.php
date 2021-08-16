@@ -61,14 +61,32 @@ class AuctionItemController extends Controller
             ]);
     }
 
-    public function edit()
+    public function edit(int $id): View
     {
+        $auctionItem = \DB::table('auction_items')->where('id', $id)->first();
 
+        return view('auction_items.edit',
+        [
+            'auctionItem' => $auctionItem
+        ]);
     }
 
-    public function update()
+    public function update(int $id, FileUploadRequest $request)
     {
+        $startingBid = (int)str_replace(['.', ','], '', $request['starting_bid']);
 
+        $image = $request->file('image');
+        $originalFileName = $request->file('image')->getClientOriginalName();
+
+        $image = Storage::disk('public')->put('images', $image);
+
+        \DB::table('auction_items')
+            ->where('id', $id)
+            ->update([
+                'starting_bid' => $startingBid,
+                'path_to_item_image' => $image,
+                'original_file_name' => $originalFileName
+            ]);
     }
 
     public function destroy()

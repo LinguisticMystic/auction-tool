@@ -23,6 +23,8 @@ Route::middleware(['auth'])->group(function () {
     //Auction items
     Route::get('/auction-items/create', [AuctionItemController::class, 'create']);
     Route::post('/auction-items/store', [AuctionItemController::class, 'store']);
+    Route::get('/auction-items/{id}/edit', [AuctionItemController::class, 'edit']);
+    Route::post('/auction-items/{id}/update', [AuctionItemController::class, 'update']);
 
     //QR
     Route::get('/auction-items/{id}/qr', [QRController::class, 'qr']);
