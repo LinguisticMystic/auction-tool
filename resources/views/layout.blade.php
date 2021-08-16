@@ -9,6 +9,12 @@
 </head>
 <body class="antialiased">
 
+@if (session('alert'))
+    <div class="alert-success">
+        {{ session('alert') }}
+    </div>
+@endif
+
 @if(count(config('app.languages')) > 1)
     <a class="language-switcher">
         {{ strtoupper(app()->getLocale()) }}

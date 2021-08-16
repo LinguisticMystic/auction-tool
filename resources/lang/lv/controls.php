@@ -8,5 +8,7 @@ return [
     'edit_item' => 'Labot izsoles priekšmetu',
     'submit' => 'Pievienot',
     'update' => 'Labot',
+    'updated' => 'labots',
+    'added' => 'pievienots',
     'print_qr_code' => 'Printēt QR kodu',
 ];

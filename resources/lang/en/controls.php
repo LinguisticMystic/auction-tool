@@ -8,5 +8,7 @@ return [
     'edit_item' => 'Edit auction item',
     'submit' => 'Submit',
     'update' => 'Update',
+    'updated' => 'updated',
+    'added' => 'added',
     'print_qr_code' => 'Print QR code',
 ];

@@ -9,7 +9,7 @@
         {{ __('page_titles.auction_item') . ' #'. $auctionItem->id }}
 
         @if(\Auth::check())
-            <a href="/auction-items/{{ $auctionItem->id }}/edit">📝</a>
+            <a href="/auction-items/{{ $auctionItem->id }}/edit">📝&nbsp;❌</a>
         @endif
 
     </h1>

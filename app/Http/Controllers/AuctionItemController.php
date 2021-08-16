@@ -21,7 +21,8 @@ class AuctionItemController extends Controller
 
     public function store(FileUploadRequest $request)
     {
-        $startingBid = (int)str_replace(['.', ','], '', $request['starting_bid']);
+        $startingBid = (int)str_replace([','], '.', $request['starting_bid']);
+        $startingBid *= 100;
 
         $image = $request->file('image');
         $originalFileName = $request->file('image')->getClientOriginalName();
@@ -49,6 +50,9 @@ class AuctionItemController extends Controller
         \DB::table('auction_items')
             ->where('id', $auctionItem->id)
             ->update(['path_to_QR_image' => $image]);
+
+        return redirect('/admin/dashboard')
+            ->with('alert', __('page_titles.auction_item') . ' ' . __('controls.added') . '!');
     }
 
     public function show(int $id): View
@@ -73,7 +77,8 @@ class AuctionItemController extends Controller
 
     public function update(int $id, FileUploadRequest $request)
     {
-        $startingBid = (int)str_replace(['.', ','], '', $request['starting_bid']);
+        $startingBid = (int)str_replace([','], '.', $request['starting_bid']);
+        $startingBid *= 100;
 
         $image = $request->file('image');
         $originalFileName = $request->file('image')->getClientOriginalName();
@@ -87,6 +92,9 @@ class AuctionItemController extends Controller
                 'path_to_item_image' => $image,
                 'original_file_name' => $originalFileName
             ]);
+
+        return redirect('/admin/dashboard')
+            ->with('alert', __('page_titles.auction_item') . ' #' . $id . ' ' . __('controls.updated') . '!');
     }
 
     public function destroy()
