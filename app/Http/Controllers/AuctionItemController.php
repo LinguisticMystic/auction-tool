@@ -9,7 +9,7 @@ use BaconQrCode\Renderer\Image\ImagickImageBackEnd;
 use BaconQrCode\Renderer\RendererStyle\RendererStyle;
 use BaconQrCode\Writer;
 use Illuminate\Contracts\View\View;
-use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Storage;
 
 class AuctionItemController extends Controller
@@ -19,7 +19,7 @@ class AuctionItemController extends Controller
         return view('auction_items.create');
     }
 
-    public function store(FileUploadRequest $request)
+    public function store(FileUploadRequest $request): RedirectResponse
     {
         $startingBid = (int)str_replace([','], '.', $request['starting_bid']);
         $startingBid *= 100;
@@ -75,7 +75,7 @@ class AuctionItemController extends Controller
         ]);
     }
 
-    public function update(int $id, FileUploadRequest $request)
+    public function update(int $id, FileUploadRequest $request): RedirectResponse
     {
         $startingBid = (int)str_replace([','], '.', $request['starting_bid']);
         $startingBid *= 100;
@@ -97,8 +97,13 @@ class AuctionItemController extends Controller
             ->with('alert', __('page_titles.auction_item') . ' #' . $id . ' ' . __('controls.updated') . '!');
     }
 
-    public function destroy()
+    public function destroy(int $id): RedirectResponse
     {
+        \DB::table('auction_items')
+            ->where('id', $id)
+            ->delete();
 
+        return redirect('/admin/dashboard')
+            ->with('alert', __('page_titles.auction_item') . ' #' . $id . ' ' . __('controls.deleted') . '!');
     }
 }

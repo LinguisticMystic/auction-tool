@@ -10,5 +10,6 @@ return [
     'update' => 'Labot',
     'updated' => 'labots',
     'added' => 'pievienots',
+    'deleted' => 'dzēsts',
     'print_qr_code' => 'Printēt QR kodu',
 ];

@@ -5,14 +5,23 @@
 @endsection
 
 @section('content')
-    <h1>
-        {{ __('page_titles.auction_item') . ' #'. $auctionItem->id }}
+    <div class="user-controls">
+        <h1>
+            {{ __('page_titles.auction_item') . ' #'. $auctionItem->id }} </h1>
 
         @if(\Auth::check())
-            <a href="/auction-items/{{ $auctionItem->id }}/edit">📝&nbsp;❌</a>
-        @endif
 
-    </h1>
+            <a href="/auction-items/{{ $auctionItem->id }}/edit">
+                <button>📝</button>
+            </a>
+
+            <form action="/auction-items/{{ $auctionItem->id }}/destroy" method="post">
+                @csrf
+                <input type="submit" value="❌" onclick="return confirm('Tiešām dzēst?');">
+            </form>
+
+        @endif
+    </div>
 
     <img class="auction-item" src="{{ asset('storage/' . $auctionItem->path_to_item_image) }}">
 
@@ -21,8 +30,6 @@
         <p><a href="/auction-items/{{ $auctionItem->id }}/qr" target="_blank">{{ __('controls.print_qr_code') }}</a></p>
     @endif
 
-    <p>edit image</p>
-    <p>edit starting bid</p>
     <p>view bidding history</p>
     <p>place bid</p>
 
