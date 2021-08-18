@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\FileUploadRequest;
 use App\Models\AuctionItem;
+use App\Models\Bid;
 use BaconQrCode\Renderer\ImageRenderer;
 use BaconQrCode\Renderer\Image\ImagickImageBackEnd;
 use BaconQrCode\Renderer\RendererStyle\RendererStyle;
@@ -52,17 +53,23 @@ class AuctionItemController extends Controller
             ->update(['path_to_QR_image' => $image]);
 
         return redirect('/admin/dashboard')
-            ->with('alert', __('page_titles.auction_item') . ' ' . __('controls.added') . '!');
+            ->with('alert-success', __('page_titles.auction_item') . ' ' . __('controls.added') . '!');
     }
 
     public function show(int $id): View
     {
         $auctionItem = AuctionItem::where('id', $id)->first();
+        $highestBid = Bid::max('bid_amount');
+        $bidHistory = Bid::all();
 
         return view('auction_items.show',
             [
-                'auctionItem' => $auctionItem
+                'auctionItem' => $auctionItem,
+                'highestBid' => $highestBid,
+                'bidHistory' => $bidHistory
             ]);
+
+        //bids index
     }
 
     public function edit(int $id): View
@@ -94,7 +101,7 @@ class AuctionItemController extends Controller
             ]);
 
         return redirect('/admin/dashboard')
-            ->with('alert', __('page_titles.auction_item') . ' #' . $id . ' ' . __('controls.updated') . '!');
+            ->with('alert-success', __('page_titles.auction_item') . ' #' . $id . ' ' . __('controls.updated') . '!');
     }
 
     public function destroy(int $id): RedirectResponse
@@ -104,6 +111,6 @@ class AuctionItemController extends Controller
             ->delete();
 
         return redirect('/admin/dashboard')
-            ->with('alert', __('page_titles.auction_item') . ' #' . $id . ' ' . __('controls.deleted') . '!');
+            ->with('alert-success', __('page_titles.auction_item') . ' #' . $id . ' ' . __('controls.deleted') . '!');
     }
 }

@@ -12,4 +12,5 @@ return [
     'added' => 'pievienots',
     'deleted' => 'dzēsts',
     'print_qr_code' => 'Printēt QR kodu',
+    'bid' => 'Veikt likmi',
 ];

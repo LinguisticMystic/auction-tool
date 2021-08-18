@@ -142,6 +142,10 @@ return [
         'password' => [
             'required' => 'Enter password',
         ],
+        'phone' => [
+            'required' => 'Enter a phone number',
+            'integer' => 'The phone number can contain only digits'
+        ],
         'image' => [
             'required' => 'Add a file',
             'image' => 'The file must be an image',
@@ -150,6 +154,10 @@ return [
         ],
         'starting_bid' => [
             'required' => 'Enter a starting bid',
+            'regex' => 'Invalid currency format'
+        ],
+        'bid_amount' => [
+            'required' => 'Enter a bid',
             'regex' => 'Invalid currency format'
         ],
     ],

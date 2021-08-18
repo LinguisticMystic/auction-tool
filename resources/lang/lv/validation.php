@@ -142,6 +142,10 @@ return [
         'password' => [
             'required' => 'Ievadiet paroli',
         ],
+        'phone' => [
+            'required' => 'Ievadiet tālruņa numuru',
+            'integer' => 'Tālruņa numurs var saturēt tikai ciparus'
+        ],
         'image' => [
             'required' => 'Pievienojiet failu',
             'image' => 'Pievienojamais fails nav attēls',
@@ -151,6 +155,10 @@ return [
         ],
         'starting_bid' => [
             'required' => 'Ievadiet sākuma cenu',
+            'regex' => 'Nepareizs valūtas formāts'
+        ],
+        'bid_amount' => [
+            'required' => 'Ievadiet likmi',
             'regex' => 'Nepareizs valūtas formāts'
         ],
     ],

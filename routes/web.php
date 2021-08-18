@@ -3,6 +3,7 @@
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\AuctionItemController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BidController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\QRController;
 use Illuminate\Support\Facades\Route;
@@ -15,7 +16,7 @@ Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout']);
 
 //Admin
-Route::get('/admin', [AdminController::class, 'loginView']);
+Route::get('/admin', [AdminController::class, 'loginView']);    //needs middleware!!!!!!!!!!!!!!!!!!!!!!
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'dashboardView']);
     Route::get('/admin/change-password', [AdminController::class, 'changePassword']);
@@ -32,3 +33,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('/auction-items/{id}', [AuctionItemController::class, 'show']);
+
+//Bids
+Route::post('/bids/store', [BidController::class, 'store']);
+Route::get('/bids/thanks', [BidController::class, 'thanksPage']); //needs middleware!!!!!!!!!!!!!!!!!!!!!!

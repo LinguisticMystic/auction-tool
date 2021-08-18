@@ -12,4 +12,5 @@ return [
     'added' => 'added',
     'deleted' => 'deleted',
     'print_qr_code' => 'Print QR code',
+    'bid' => 'Place bid',
 ];

@@ -25,19 +25,27 @@ td a {
     width: 360px;
 }
 
-.alert-success {
-    background-color: lightgreen;
+.alert {
     padding: 3px 3px 3px 8px;
-    border: 1px solid mediumseagreen;
     border-radius: 3px;
     margin-bottom: 1rem;
+}
+
+.alert-success {
+    background-color: lightgreen;
+    border: 1px solid mediumseagreen;
+}
+
+.alert-danger {
+    background-color: red;
+    border: 1px solid darkred;
 }
 
 .user-controls {
     display: flex;
 }
 
-.user-controls button, input {
+.noto-font {
     font-size: 2rem;
     margin: 0 6px;
 }
