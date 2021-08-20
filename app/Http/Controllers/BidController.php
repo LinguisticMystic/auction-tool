@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\BidRequest;
+use App\Models\AuctionItem;
 use App\Models\Bid;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
@@ -12,15 +13,23 @@ class BidController extends Controller
 {
     public function store(BidRequest $request): RedirectResponse
     {
-        $highestBid = Bid::max('bid_amount');
+        $startingBid = AuctionItem::where('id', $request->auction_item_id)->first()->starting_bid;
+        $highestBid = Bid::where('auction_item_id', $request->auction_item_id)->max('bid_amount');
 
-        if ($request['bid_amount'] <= $highestBid) {
+        $bidAmount = str_replace(',', '.', $request['bid_amount']);
+        $bidAmount *= 100;
+
+        if ($highestBid !== null && $bidAmount <= (int)$highestBid) {
             return Redirect::back()
-                ->with('alert-danger', __('messages.invalid_bid_amount'));
+                ->withErrors(['invalid_bid' => __('messages.invalid_bid_amount_case_highest_bid')])
+                ->withInput();
         }
 
-        $bidAmount = (int)str_replace([','], '.', $request['bid_amount']);
-        $bidAmount *= 100;
+        if ($bidAmount <= (int)$startingBid) {
+            return Redirect::back()
+                ->withErrors(['invalid_bid' => __('messages.invalid_bid_amount_case_starting_bid')])
+                ->withInput();
+        }
 
         Bid::create([
             'auction_item_id' => $request->auction_item_id,

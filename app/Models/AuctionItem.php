@@ -15,4 +15,9 @@ class AuctionItem extends Model
         'path_to_item_image',
         'original_file_name'
     ];
+
+    public function bids()
+    {
+        return $this->hasMany(Bid::class);
+    }
 }

@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\FileUploadRequest;
+use App\Http\Requests\AuctionItemStoreRequest;
+use App\Http\Requests\AuctionItemUpdateRequest;
 use App\Models\AuctionItem;
 use App\Models\Bid;
 use BaconQrCode\Renderer\ImageRenderer;
@@ -20,9 +21,9 @@ class AuctionItemController extends Controller
         return view('auction_items.create');
     }
 
-    public function store(FileUploadRequest $request): RedirectResponse
+    public function store(AuctionItemStoreRequest $request): RedirectResponse
     {
-        $startingBid = (int)str_replace([','], '.', $request['starting_bid']);
+        $startingBid = str_replace([','], '.', $request['starting_bid']);
         $startingBid *= 100;
 
         $image = $request->file('image');
@@ -59,8 +60,15 @@ class AuctionItemController extends Controller
     public function show(int $id): View
     {
         $auctionItem = AuctionItem::where('id', $id)->first();
-        $highestBid = Bid::max('bid_amount');
-        $bidHistory = Bid::all();
+        $bidHistory = Bid::where('auction_item_id', $id)->get();
+
+        $highestBid = 0;
+
+        foreach ($bidHistory as $bid) {
+            if ($bid->bid_amount > $highestBid) {
+                $highestBid = $bid->bid_amount;
+            }
+        }
 
         return view('auction_items.show',
             [
@@ -68,8 +76,6 @@ class AuctionItemController extends Controller
                 'highestBid' => $highestBid,
                 'bidHistory' => $bidHistory
             ]);
-
-        //bids index
     }
 
     public function edit(int $id): View
@@ -82,22 +88,29 @@ class AuctionItemController extends Controller
         ]);
     }
 
-    public function update(int $id, FileUploadRequest $request): RedirectResponse
+    public function update(int $id, AuctionItemUpdateRequest $request): RedirectResponse
     {
-        $startingBid = (int)str_replace([','], '.', $request['starting_bid']);
+        $startingBid = str_replace(',', '.', $request['starting_bid']);
         $startingBid *= 100;
 
-        $image = $request->file('image');
-        $originalFileName = $request->file('image')->getClientOriginalName();
+        if ($request['file'] !== null) {
+            $image = $request->file('image');
+            $originalFileName = $request->file('image')->getClientOriginalName();
 
-        $image = Storage::disk('public')->put('images', $image);
+            $image = Storage::disk('public')->put('images', $image);
+
+            \DB::table('auction_items')
+                ->where('id', $id)
+                ->update([
+                    'path_to_item_image' => $image,
+                    'original_file_name' => $originalFileName
+                ]);
+        }
 
         \DB::table('auction_items')
             ->where('id', $id)
             ->update([
-                'starting_bid' => $startingBid,
-                'path_to_item_image' => $image,
-                'original_file_name' => $originalFileName
+                'starting_bid' => $startingBid
             ]);
 
         return redirect('/admin/dashboard')

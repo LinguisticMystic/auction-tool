@@ -49,3 +49,12 @@ td a {
     margin: 0 6px;
 }
 
+table, td, th {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+td {
+    text-align: center;
+}
+

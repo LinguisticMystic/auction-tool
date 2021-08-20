@@ -30,7 +30,25 @@
         <p><a href="/auction-items/{{ $auctionItem->id }}/qr" target="_blank">{{ __('controls.print_qr_code') }}</a></p>
     @endif
 
-    <p>bid history</p>
+    <p><strong>{{ __('content.bidding_history') }}</strong></p>
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>{{ __('forms.bid_amount') }}</th>
+            <th>{{ __('content.bidder') }}</th>
+            <th>{{ __('forms.phone') }}</th>
+            <th>{{ __('content.date') }}</th>
+        </tr>
+        @foreach($bidHistory as $bid)
+            <tr>
+                <td>{{ $bid->id }}</td>
+                <td>€{{ $bid->bid_amount / 100 }}</td>
+                <td>{{ $bid->bidder_name }}</td>
+                <td>{{ $bid->bidder_phone }}</td>
+                <td>{{ $bid->created_at }}</td>
+            </tr>
+        @endforeach
+    </table>
 
     <p><strong>{{ __('content.current_bid') }}:</strong> €{{ $highestBid / 100 }}</p>
 
@@ -44,7 +62,7 @@
         </div>
 
         <label>{{__('forms.phone')}}: </label>
-        <input type="text" name="phone">
+        <input type="text" name="phone" value="{{ old('phone') }}">
         <div class="form-error">
             <strong>{{ $errors->first('phone') }}</strong>
         </div>
@@ -53,6 +71,7 @@
         <input type="text" name="bid_amount" size="4">
         <div class="form-error">
             <strong>{{ $errors->first('bid_amount') }}</strong>
+            <strong>{{ $errors->first('invalid_bid') }}</strong>
         </div>
 
         <input type="hidden" value="{{ $auctionItem->id }}" name="auction_item_id">

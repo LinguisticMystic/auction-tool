@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class BidRequest extends FormRequest
+class AuctionItemUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,13 +24,11 @@ class BidRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'phone' => 'required|integer',
-            'bid_amount' => [
+            'image' => 'image|mimes:jpeg,jpg|max:1024',
+            'starting_bid' => [
                 'required',
-                'regex:/^\d+([\.]\d{1,2})?$/'
-            ],
-            'auction_item_id' => 'required'
+                'regex:/^\d+([\.\,]\d{1,2})?$/'
+            ]
         ];
     }
 }

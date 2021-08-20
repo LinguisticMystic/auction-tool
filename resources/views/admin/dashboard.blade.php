@@ -18,19 +18,19 @@
 
     <table>
         <tr>
-            <th>Item</th>
-            <th>Current bid</th>
-            <th>Bidder</th>
-            <th>Phone</th>
-            <th></th>
+            <th>ID</th>
+            <th>{{ __('content.current_bid') }}</th>
+            <th>{{ __('content.bidder') }}</th>
+            <th>{{ __('forms.phone') }}</th>
+            <th>{{ __('content.view') }}</th>
         </tr>
-        @foreach($auctionItems as $auctionItem)
+        @foreach($auctionItems as $id => $auctionItem)
             <tr>
-                <td>{{ $auctionItem->id }}</td>
-                <td>Current bid</td>
-                <td>Name</td>
-                <td>Number</td>
-                <td><a href="/auction-items/{{ $auctionItem->id }}">👁</a></td>
+                <td>#{{ $id }}</td>
+                <td>€{{ $auctionItem['bid_amount'] / 100}}</td>
+                <td>{{ $auctionItem['bidder_name']}}</td>
+                <td>{{ $auctionItem['bidder_phone']}}</td>
+                <td><a href="/auction-items/{{ $id }}">👁</a></td>
             </tr>
         @endforeach
     </table>
