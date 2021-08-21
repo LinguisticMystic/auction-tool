@@ -23,6 +23,12 @@
 
 @if(count(config('app.languages')) > 1)
     <a class="language-switcher">
+        @if (app()->getLocale() == 'lv')
+            🇱🇻
+        @endif
+        @if (app()->getLocale() == 'en')
+            🇺🇸
+        @endif
         {{ strtoupper(app()->getLocale()) }}
     </a>
     <div class="language-menu">
@@ -33,11 +39,13 @@
 @endif
 
 @if(\Auth::check())
-    <?php echo \Auth::user()->name; ?>
-    <form action="/logout" method="post" >
-        @csrf
-        <button>{{__('controls.log_out')}}</button>
-    </form>
+    <div class="admin-controls">
+        <?php echo '👤 ' . __('content.logged_in_as') . ' <strong>' . \Auth::user()->name . '</strong>'; ?>
+        <form action="/logout" method="post">
+            @csrf
+            <button>{{__('controls.log_out')}}</button>
+        </form>
+    </div>
 @endif
 
 @yield('content')
