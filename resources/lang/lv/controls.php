@@ -16,5 +16,6 @@ return [
     'print_qr_code' => 'Printēt QR kodu',
     'bid' => 'Veikt likmi',
     'book_print' => 'Rezervēt digitālo druku',
-    'book' => 'Book'
+    'book' => 'Book',
+    'change' => 'Mainīt'
 ];

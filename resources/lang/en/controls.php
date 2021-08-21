@@ -16,5 +16,6 @@ return [
     'print_qr_code' => 'Print QR code',
     'bid' => 'Place bid',
     'book_print' => 'Book a digital print',
-    'book' => 'Book'
+    'book' => 'Book',
+    'change' => 'Change'
 ];

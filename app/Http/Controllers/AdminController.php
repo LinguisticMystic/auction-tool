@@ -53,12 +53,4 @@ class AdminController extends Controller
                 'auctionItems' => $auctionItemsWithHighestBidders
             ]);
     }
-
-    /**
-     * @return View
-     */
-    public function changePassword(): View
-    {
-        return view('admin.change_password');
-    }
 }

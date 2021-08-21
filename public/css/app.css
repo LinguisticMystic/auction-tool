@@ -75,12 +75,12 @@ p.text-sm.text-gray-700.leading-5 {
     display: none;
 }
 
-.admin-controls {
-    position: absolute;
-    right: 0;
-    top: 0;
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-login-info {
     text-align: right;
-    padding-top: 5px;
-    padding-right: 7px;
 }
 

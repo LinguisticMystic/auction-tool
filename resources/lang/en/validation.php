@@ -141,6 +141,7 @@ return [
         ],
         'password' => [
             'required' => 'Enter password',
+            'confirmed' => 'Passwords do not match'
         ],
         'phone' => [
             'required' => 'Enter a phone number',

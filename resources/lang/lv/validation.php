@@ -141,6 +141,7 @@ return [
         ],
         'password' => [
             'required' => 'Ievadiet paroli',
+            'confirmed' => 'Paroles nesakrīt'
         ],
         'phone' => [
             'required' => 'Ievadiet tālruņa numuru',

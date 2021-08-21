@@ -6,6 +6,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BidController;
 use App\Http\Controllers\BookingController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PasswordController;
 use App\Http\Controllers\QRController;
 use Illuminate\Support\Facades\Route;
 
@@ -21,7 +22,8 @@ Route::post('/logout', [AuthController::class, 'logout']);
 Route::get('/admin', [AdminController::class, 'loginView'])->middleware('login.status');
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'dashboardView']);
-    Route::get('/admin/change-password', [AdminController::class, 'changePassword']);
+    Route::get('/admin/change-password', [PasswordController::class, 'changePassword']);
+    Route::post('/admin/change-password/store', [PasswordController::class, 'store']);
 
     //Auction items
     Route::get('/auction-items/create', [AuctionItemController::class, 'create']);

@@ -21,32 +21,36 @@
     </div>
 @endif
 
-@if(count(config('app.languages')) > 1)
-    <a class="language-switcher">
-        @if (app()->getLocale() == 'lv')
-            🇱🇻
-        @endif
-        @if (app()->getLocale() == 'en')
-            🇺🇸
-        @endif
-        {{ strtoupper(app()->getLocale()) }}
-    </a>
-    <div class="language-menu">
-        @foreach(config('app.languages') as $langLocale => $langName)
-            <a href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ __('languages.' . $langName) }}</a>
-        @endforeach
-    </div>
-@endif
+<div class="top-bar">
+    @if(count(config('app.languages')) > 1)
+        <div>
+            <a class="language-switcher">
+                @if (app()->getLocale() == 'lv')
+                    🇱🇻
+                @endif
+                @if (app()->getLocale() == 'en')
+                    🇺🇸
+                @endif
+                {{ strtoupper(app()->getLocale()) }}
+            </a>
+            <div class="language-menu">
+                @foreach(config('app.languages') as $langLocale => $langName)
+                    <a href="{{ url()->current() }}?change_language={{ $langLocale }}">{{ __('languages.' . $langName) }}</a>
+                @endforeach
+            </div>
+        </div>
+    @endif
 
-@if(\Auth::check())
-    <div class="admin-controls">
-        <?php echo '👤 ' . __('content.logged_in_as') . ' <strong>' . \Auth::user()->name . '</strong>'; ?>
-        <form action="/logout" method="post">
-            @csrf
-            <button>{{__('controls.log_out')}}</button>
-        </form>
-    </div>
-@endif
+    @if(\Auth::check())
+        <div class="user-login-info">
+            <?php echo '👤 ' . __('content.logged_in_as') . ' <strong>' . \Auth::user()->name . '</strong>'; ?>
+            <form action="/logout" method="post">
+                @csrf
+                <button>{{__('controls.log_out')}}</button>
+            </form>
+        </div>
+    @endif
+</div>
 
 @yield('content')
 
