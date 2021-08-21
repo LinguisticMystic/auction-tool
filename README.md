@@ -16,6 +16,7 @@ An auctioning tool for adding items to an auction, generating QR codes, and stor
 * ``npm install``
 * ``php artisan key:generate``
 * ``php artisan migrate``
+* ``php artisan storage:link``
 
 Requires **imagick** extension: ``sudo apt install php7.4-imagick``
 
