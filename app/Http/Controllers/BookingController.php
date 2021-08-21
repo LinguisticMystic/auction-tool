@@ -39,7 +39,8 @@ class BookingController extends Controller
             'buyer_phone' => $request->phone
         ]);
 
-        return Redirect::to('/thanks');
+        \Session::put('booked', true);
 
+        return Redirect::to('/thanks');
     }
 }

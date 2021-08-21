@@ -11,14 +11,14 @@ use Illuminate\Support\Facades\Route;
 
 //Home
 Route::get('/', [HomeController::class, 'mainView']);
-Route::get('/thanks', [HomeController::class, 'thanksPage']); //needs middleware!!!!!!!!!!!!!!!!!!!!!!
+Route::get('/thanks', [HomeController::class, 'thanksPage'])->middleware('booking');
 
 //Auth
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/logout', [AuthController::class, 'logout']);
 
 //Admin
-Route::get('/admin', [AdminController::class, 'loginView']);    //needs middleware!!!!!!!!!!!!!!!!!!!!!!
+Route::get('/admin', [AdminController::class, 'loginView'])->middleware('login.status');
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin/dashboard', [AdminController::class, 'dashboardView']);
     Route::get('/admin/change-password', [AdminController::class, 'changePassword']);

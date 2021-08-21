@@ -28,5 +28,5 @@ return [
     'bid_entry' => 'Likmes ieraksts',
     'book_print_description' => 'Lai iegādātos šī darba digitālo druku, vispirms jāveic rezervācija. Lūdzu, atstājiet savu kontaktinformāciju, un mēs jūs informēsim par drukas pieejamību. Vienas digitālās drukas cena ir <strong>EUR 10</strong>.',
     'table_amount' => 'Sk.',
-    'thanks_description' => 'Paldies! Drīzumā ar jums sazināsimies.'
+    'thanks_description' => 'Drīzumā ar jums sazināsimies.'
 ];

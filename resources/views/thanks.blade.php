@@ -6,8 +6,10 @@
 
 @section('content')
 
-    <div>{{ __('page_titles.thanks') }}</div>
+    <h1>{{ __('page_titles.thanks') }}</h1>
 
     <p>{{ __('content.thanks_description') }}</p>
 
 @endsection
+
+<?php \Session::flush(); ?>

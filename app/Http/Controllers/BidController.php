@@ -37,6 +37,8 @@ class BidController extends Controller
             'bidder_phone' => $request->phone
         ]);
 
+        \Session::put('booked', true);
+
         return Redirect::to('/thanks');
     }
 
