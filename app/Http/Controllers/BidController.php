@@ -41,6 +41,16 @@ class BidController extends Controller
         return Redirect::to('/bids/thanks');
     }
 
+    public function destroy(int $id)
+    {
+        \DB::table('bids')
+            ->where('id', $id)
+            ->delete();
+
+        return Redirect::back()
+            ->with('alert-success', __('forms.bid_entry') . ' ' . __('controls.deleted') . '!');
+    }
+
     public function thanksPage(): View
     {
         return view('thanks');

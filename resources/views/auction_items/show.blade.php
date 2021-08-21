@@ -36,6 +36,7 @@
                 <th>{{ __('content.bidder') }}</th>
                 <th>{{ __('forms.phone') }}</th>
                 <th>{{ __('content.date') }}</th>
+                <th></th>
             </tr>
             <?php $i = 1 ?>
             @foreach($bidHistory as $bid)
@@ -45,6 +46,12 @@
                     <td>{{ $bid->bidder_name }}</td>
                     <td>{{ $bid->bidder_phone }}</td>
                     <td>{{ $bid->created_at }}</td>
+                    <td>
+                        <form action="/bids/{{ $bid->id }}/destroy" method="post">
+                            @csrf
+                            <input class="noto-font" type="submit" value="❌" onclick="return confirm('Tiešām dzēst?');">
+                        </form>
+                    </td>
                 </tr>
                 <?php $i++ ?>
             @endforeach

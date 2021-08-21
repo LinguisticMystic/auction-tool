@@ -7,5 +7,6 @@ return [
     'item_id' => 'Pr. ID',
     'bidder' => 'Solītājs',
     'date' => 'Datums',
-    'view' => 'Skatīt'
+    'view' => 'Skatīt',
+    'bid_entry' => 'Likmes ieraksts'
 ];

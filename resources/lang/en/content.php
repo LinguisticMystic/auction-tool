@@ -7,5 +7,6 @@ return [
     'item_id' => 'Item ID',
     'bidder' => 'Bidder',
     'date' => 'Date',
-    'view' => 'View'
+    'view' => 'View',
+    'bid_entry' => 'Bid entry'
 ];

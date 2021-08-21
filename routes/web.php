@@ -36,4 +36,5 @@ Route::get('/auction-items/{id}', [AuctionItemController::class, 'show']);
 
 //Bids
 Route::post('/bids/store', [BidController::class, 'store']);
+Route::post('/bids/{id}/destroy', [BidController::class, 'destroy']);
 Route::get('/bids/thanks', [BidController::class, 'thanksPage']); //needs middleware!!!!!!!!!!!!!!!!!!!!!!
