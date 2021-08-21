@@ -1,5 +1,7 @@
 <?php
 
+use Kyslik\ColumnSortable\ColumnSortableServiceProvider;
+
 return [
 
     /*
@@ -165,6 +167,7 @@ return [
         /*
          * Package Service Providers...
          */
+        ColumnSortableServiceProvider::class,
 
         /*
          * Application Service Providers...

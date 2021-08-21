@@ -7,13 +7,18 @@
 @section('content')
     <h1>{{ __('page_titles.bookings')}}</h1>
 
+    <?php $itemId = __('content.item_id'); ?>
+    <?php $amount = __('content.table_amount'); ?>
+    <?php $name = __('forms.name'); ?>
+    <?php $phone = __('forms.phone'); ?>
+
     <table>
         <tr>
-            <th>ID</th>
-            <th>{{ __('content.item_id')}}</th>
-            <th>{{ __('content.table_amount')}}</th>
-            <th>{{ __('forms.name')}}</th>
-            <th>{{ __('forms.phone')}}</th>
+            <th>@sortablelink('ID')</th>
+            <th>@sortablelink('auction_item_id', $itemId)</th>
+            <th>@sortablelink('amount', $amount)</th>
+            <th>@sortablelink('buyer_name', $name)</th>
+            <th>@sortablelink('buyer_phone', $phone)</th>
         </tr>
         @foreach ($bookings as $booking)
             <tr>
@@ -26,4 +31,6 @@
         @endforeach
     </table>
     {{ $bookings->links() }}
+
+    {!! $bookings->appends(Request::except('page'))->render() !!}
 @endsection

@@ -22,7 +22,7 @@ class BookingController extends Controller
 
     public function index()
     {
-        $bookings = Booking::paginate(50);
+        $bookings = Booking::sortable()->paginate(50);
 
         return view('bookings.index',
             [
