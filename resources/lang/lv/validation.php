@@ -155,11 +155,11 @@ return [
         ],
         'starting_bid' => [
             'required' => 'Ievadiet sākuma cenu',
-            'regex' => 'Nepareizs valūtas formāts'
+            'integer' => 'Ievadiet veselu skaitli'
         ],
         'bid_amount' => [
             'required' => 'Ievadiet likmi',
-            'regex' => 'Nepareizs valūtas formāts'
+            'integer' => 'Ievadiet veselu skaitli'
         ],
     ],
 

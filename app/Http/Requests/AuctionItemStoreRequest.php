@@ -25,10 +25,7 @@ class AuctionItemStoreRequest extends FormRequest
     {
         return [
             'image' => 'required|image|mimes:jpeg,jpg|max:1024',
-            'starting_bid' => [
-                'required',
-                'regex:/^\d+([\.\,]\d{1,2})?$/'
-            ]
+            'starting_bid' => 'required|integer'
         ];
     }
 }

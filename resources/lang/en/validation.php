@@ -154,11 +154,11 @@ return [
         ],
         'starting_bid' => [
             'required' => 'Enter a starting bid',
-            'regex' => 'Invalid currency format'
+            'integer' => 'Enter an integer'
         ],
         'bid_amount' => [
             'required' => 'Enter a bid',
-            'regex' => 'Invalid currency format'
+            'integer' => 'Enter an integer'
         ],
     ],
 

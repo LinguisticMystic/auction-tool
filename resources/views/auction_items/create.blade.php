@@ -19,7 +19,7 @@
         <br>
 
         <label>{{__('forms.starting_bid')}}: </label>
-        <input type="text" name="starting_bid" size="4">
+        <input type="text" name="starting_bid" size="4" value="{{ old('starting_bid') }}">
         <div class="form-error">
             <strong>{{ $errors->first('starting_bid') }}</strong>
         </div>
