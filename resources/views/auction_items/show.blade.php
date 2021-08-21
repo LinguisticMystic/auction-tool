@@ -36,9 +36,15 @@
                 <th>{{ __('content.bidder') }}</th>
                 <th>{{ __('forms.phone') }}</th>
                 <th>{{ __('content.date') }}</th>
-                <th></th>
+                <th>{{ __('controls.delete') }}</th>
             </tr>
-            <?php $i = 1 ?>
+
+            @if (!isset($_GET['page']) || $_GET['page'] < 2)
+                <?php $i = 1 ?>
+            @else
+                <?php $i = ($_GET['page'] - 1) * $paginationRange + 1;?>
+            @endif
+
             @foreach($bidHistory as $bid)
                 <tr>
                     <td>{{ $i }}</td>
@@ -53,9 +59,13 @@
                         </form>
                     </td>
                 </tr>
+
                 <?php $i++ ?>
+
             @endforeach
         </table>
+
+        {{ $bidHistory->links() }}
 
     @endif
 

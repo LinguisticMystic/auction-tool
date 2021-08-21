@@ -60,7 +60,10 @@ class AuctionItemController extends Controller
     public function show(int $id): View
     {
         $auctionItem = AuctionItem::where('id', $id)->first();
-        $bidHistory = Bid::where('auction_item_id', $id)->get();
+
+        $paginationRange = 50;
+
+        $bidHistory = Bid::where('auction_item_id', $id)->orderBy('bid_amount', 'DESC')->paginate($paginationRange);
 
         $highestBid = 0;
 
@@ -74,7 +77,8 @@ class AuctionItemController extends Controller
             [
                 'auctionItem' => $auctionItem,
                 'highestBid' => $highestBid,
-                'bidHistory' => $bidHistory
+                'bidHistory' => $bidHistory,
+                'paginationRange' => $paginationRange
             ]);
     }
 

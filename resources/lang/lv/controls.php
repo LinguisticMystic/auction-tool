@@ -12,6 +12,7 @@ return [
     'updated' => 'labots',
     'added' => 'pievienots',
     'deleted' => 'dzēsts',
+    'delete' => 'Dzēst',
     'print_qr_code' => 'Printēt QR kodu',
     'bid' => 'Veikt likmi',
     'book_print' => 'Rezervēt digitālo druku',

@@ -12,6 +12,7 @@ return [
     'updated' => 'updated',
     'added' => 'added',
     'deleted' => 'deleted',
+    'delete' => 'Delete',
     'print_qr_code' => 'Print QR code',
     'bid' => 'Place bid',
     'book_print' => 'Book a digital print',
