@@ -84,7 +84,7 @@
         </div>
 
         <label>{{__('forms.bid_amount')}}: </label>
-        <input type="text" name="bid_amount" size="4">
+        <input type="text" name="bid_amount" size="4" value="{{ old('bid_amount') }}">
         <div class="form-error">
             <strong>{{ $errors->first('bid_amount') }}</strong>
             <strong>{{ $errors->first('invalid_bid') }}</strong>
@@ -95,5 +95,9 @@
         <input type="submit" value="{{__('controls.bid')}}">
 
     </form>
+
+    <br>
+
+    <a href="/auction-items/{{ $auctionItem->id }}/book">{{ __('controls.book_print') }}</a>
 
 @endsection

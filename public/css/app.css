@@ -54,7 +54,24 @@ table, td, th {
     border-collapse: collapse;
 }
 
+table {
+    width: 100%;
+}
+
 td {
     text-align: center;
+}
+
+svg {
+    width: 30px;
+}
+
+.flex.items-center.justify-between {
+    text-align: center;
+}
+
+.flex.justify-between.flex-1,
+p.text-sm.text-gray-700.leading-5 {
+    display: none;
 }
 

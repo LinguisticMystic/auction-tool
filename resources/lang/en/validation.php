@@ -160,6 +160,10 @@ return [
             'required' => 'Enter a bid',
             'integer' => 'Enter an integer'
         ],
+        'amount' => [
+            'required' => 'Enter an amount',
+            'min' => 'The amount must be at least 1'
+        ]
     ],
 
     /*

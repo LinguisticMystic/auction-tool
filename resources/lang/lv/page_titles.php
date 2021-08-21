@@ -5,5 +5,6 @@ return [
     'admin_login' => 'Admin ielogošanās',
     'admin_dashboard' => 'Admin panelis',
     'auction_item' => 'Izsoles priekšmets',
-    'thanks' => 'Paldies!'
+    'thanks' => 'Paldies!',
+    'bookings' => 'Rezervācijas'
 ];

@@ -161,6 +161,10 @@ return [
             'required' => 'Ievadiet likmi',
             'integer' => 'Ievadiet veselu skaitli'
         ],
+        'amount' => [
+            'required' => 'Ievadiet daudzumu',
+            'min' => 'Daudzumam jābūt vismaz 1'
+        ]
     ],
 
     /*

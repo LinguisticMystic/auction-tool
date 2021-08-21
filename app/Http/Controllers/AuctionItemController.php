@@ -83,9 +83,9 @@ class AuctionItemController extends Controller
         $auctionItem = \DB::table('auction_items')->where('id', $id)->first();
 
         return view('auction_items.edit',
-        [
-            'auctionItem' => $auctionItem
-        ]);
+            [
+                'auctionItem' => $auctionItem
+            ]);
     }
 
     public function update(int $id, AuctionItemUpdateRequest $request): RedirectResponse

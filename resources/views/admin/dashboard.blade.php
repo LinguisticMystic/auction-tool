@@ -14,6 +14,9 @@
         <li>
             <a href="/auction-items/create">{{__('controls.add_new_item')}}</a>
         </li>
+        <li>
+            <a href="/bookings">{{__('controls.view_bookings')}}</a>
+        </li>
     </ul>
 
     <table>

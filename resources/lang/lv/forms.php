@@ -6,6 +6,6 @@ return [
     'image' => 'Attēls',
     'starting_bid' => 'Sākuma cena',
     'bid_amount' => 'Likme',
-    'phone' => 'Tel.'
-
+    'phone' => 'Tel.',
+    'amount' => 'Daudzums'
 ];

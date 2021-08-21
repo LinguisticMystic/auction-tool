@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Http\Requests\BidRequest;
 use App\Models\AuctionItem;
 use App\Models\Bid;
-use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Support\Facades\Redirect;
 
@@ -38,10 +37,10 @@ class BidController extends Controller
             'bidder_phone' => $request->phone
         ]);
 
-        return Redirect::to('/bids/thanks');
+        return Redirect::to('/thanks');
     }
 
-    public function destroy(int $id)
+    public function destroy(int $id): RedirectResponse
     {
         \DB::table('bids')
             ->where('id', $id)
@@ -49,10 +48,5 @@ class BidController extends Controller
 
         return Redirect::back()
             ->with('alert-success', __('forms.bid_entry') . ' ' . __('controls.deleted') . '!');
-    }
-
-    public function thanksPage(): View
-    {
-        return view('thanks');
     }
 }
