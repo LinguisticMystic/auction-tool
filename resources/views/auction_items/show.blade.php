@@ -26,31 +26,40 @@
     <img class="auction-item" src="{{ asset('storage/' . $auctionItem->path_to_item_image) }}">
 
     @if(\Auth::check())
-        <p><strong>{{ __('forms.starting_bid') }}: </strong>€{{ $auctionItem->starting_bid / 100 }}</p>
         <p><a href="/auction-items/{{ $auctionItem->id }}/qr" target="_blank">{{ __('controls.print_qr_code') }}</a></p>
+
+        <p><strong>{{ __('content.bidding_history') }}</strong></p>
+        <table>
+            <tr>
+                <th>ID</th>
+                <th>{{ __('forms.bid_amount') }}</th>
+                <th>{{ __('content.bidder') }}</th>
+                <th>{{ __('forms.phone') }}</th>
+                <th>{{ __('content.date') }}</th>
+            </tr>
+            <?php $i = 1 ?>
+            @foreach($bidHistory as $bid)
+                <tr>
+                    <td>{{ $i }}</td>
+                    <td>€{{ $bid->bid_amount / 100 }}</td>
+                    <td>{{ $bid->bidder_name }}</td>
+                    <td>{{ $bid->bidder_phone }}</td>
+                    <td>{{ $bid->created_at }}</td>
+                </tr>
+                <?php $i++ ?>
+            @endforeach
+        </table>
+
     @endif
 
-    <p><strong>{{ __('content.bidding_history') }}</strong></p>
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>{{ __('forms.bid_amount') }}</th>
-            <th>{{ __('content.bidder') }}</th>
-            <th>{{ __('forms.phone') }}</th>
-            <th>{{ __('content.date') }}</th>
-        </tr>
-        @foreach($bidHistory as $bid)
-            <tr>
-                <td>{{ $bid->id }}</td>
-                <td>€{{ $bid->bid_amount / 100 }}</td>
-                <td>{{ $bid->bidder_name }}</td>
-                <td>{{ $bid->bidder_phone }}</td>
-                <td>{{ $bid->created_at }}</td>
-            </tr>
-        @endforeach
-    </table>
-
-    <p><strong>{{ __('content.current_bid') }}:</strong> €{{ $highestBid / 100 }}</p>
+    @if($highestBid === 0)
+        <p><strong>{{ __('forms.starting_bid') }}: </strong>€{{ $auctionItem->starting_bid / 100 }}</p>
+    @else
+        @if(\Auth::check())
+            <p><strong>{{ __('forms.starting_bid') }}: </strong>€{{ $auctionItem->starting_bid / 100 }}</p>
+        @endif
+        <p><strong>{{ __('content.current_bid') }}:</strong> €{{ $highestBid / 100 }}</p>
+    @endif
 
     <form action="/bids/store" method="post">
         @csrf
