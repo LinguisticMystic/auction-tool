@@ -8,4 +8,6 @@
 
     <div>{{ __('page_titles.thanks') }}</div>
 
+    <p>{{ __('content.thanks_description') }}</p>
+
 @endsection

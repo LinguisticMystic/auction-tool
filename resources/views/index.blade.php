@@ -6,6 +6,6 @@
 
 @section('content')
 
-    <div>{{ __('content.welcome') }}</div>
+    <h1>{!! __('content.welcome') !!}</h1>
 
 @endsection
