@@ -10,13 +10,13 @@ An auctioning tool for adding items to an auction, generating QR codes, and stor
 
 ##Project setup
 
-Requires **imagick** extension: ``sudo apt install php7.4-imagick``
-
-Create user: ``php artisan create:user``
-
 * Create database
 * Edit ``.env`` file
 * ``composer install``
 * ``npm install``
 * ``php artisan key:generate``
 * ``php artisan migrate``
+
+Requires **imagick** extension: ``sudo apt install php7.4-imagick``
+
+Create user: ``php artisan create:user``
