@@ -41,6 +41,6 @@ class BookingController extends Controller
 
         \Session::put('booked', true);
 
-        return Redirect::to('/thanks');
+        return Redirect::to('/thanks-for-booking');
     }
 }

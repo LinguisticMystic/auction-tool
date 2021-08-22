@@ -21,7 +21,7 @@ class Booking
 
         if (\Session::get('booked') !== true) {
 
-            if ($previousUrl === \URL::to('/thanks')) {
+            if ($previousUrl === \URL::to('/thanks-for-bidding') || $previousUrl === \URL::to('/thanks-for-booking')) {
                 return redirect('/');
             } else {
                 return Redirect::back();

@@ -11,8 +11,13 @@ class HomeController extends Controller
         return view('index');
     }
 
-    public function thanksPage(): View
+    public function thanksForBidding(): View
     {
-        return view('thanks');
+        return view('thanks_for_bidding');
+    }
+
+    public function thanksForBooking(): View
+    {
+        return view('thanks_for_booking');
     }
 }

@@ -8,7 +8,7 @@
 
     <h1>{{ __('page_titles.thanks') }}</h1>
 
-    <p>{{ __('content.thanks_description') }}</p>
+    <p>{{ __('content.thanks_for_booking') }}</p>
 
 @endsection
 

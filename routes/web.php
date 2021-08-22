@@ -12,7 +12,8 @@ use Illuminate\Support\Facades\Route;
 
 //Home
 Route::get('/', [HomeController::class, 'mainView']);
-Route::get('/thanks', [HomeController::class, 'thanksPage'])->middleware('booking');
+Route::get('/thanks-for-bidding', [HomeController::class, 'thanksForBidding'])->middleware('booking');
+Route::get('/thanks-for-booking', [HomeController::class, 'thanksForBooking'])->middleware('booking');
 
 //Auth
 Route::post('/login', [AuthController::class, 'login']);
