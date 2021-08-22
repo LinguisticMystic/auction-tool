@@ -8,6 +8,7 @@
     <form action="/login" method="post">
         @csrf
 
+        <br>
         <label>{{__('forms.name')}}: </label>
         <input type="text" name="name">
         <div class="form-error">

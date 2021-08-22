@@ -85,8 +85,17 @@ p.text-sm.text-gray-700.leading-5 {
     margin-bottom: 1.5rem;
 }
 
+.form {
+    width: 200px;
+}
+
 input {
     font-size: 1rem;
+    width: 100%;
+}
+
+.currency-input {
+    width: 40%;
 }
 
 @media (min-width: 768px) {

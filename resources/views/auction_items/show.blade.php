@@ -81,31 +81,34 @@
     <form action="/bids/store" method="post">
         @csrf
 
-        <label>{{__('forms.name')}}: </label>
-        <input type="text" name="name" value="{{ old('name') }}">
-        <div class="form-error">
-            <strong>{{ $errors->first('name') }}</strong>
+        <div class="form">
+            <label>{{__('forms.name')}}: </label>
+            <input type="text" name="name" value="{{ old('name') }}">
+            <div class="form-error">
+                <strong>{{ $errors->first('name') }}</strong>
+            </div>
+
+            <label>{{__('forms.phone')}}: </label>
+            <input type="text" name="phone" value="{{ old('phone') }}">
+            <div class="form-error">
+                <strong>{{ $errors->first('phone') }}</strong>
+            </div>
+
+            <label>{{__('forms.bid_amount')}}: </label>
+            <br>
+            <input class="currency-input" type="text" name="bid_amount" value="{{ old('bid_amount') }}">
+            <div class="form-error">
+                <strong>{{ $errors->first('bid_amount') }}</strong>
+                <strong>{{ $errors->first('invalid_bid') }}</strong>
+            </div>
+
+
+            <input type="hidden" value="{{ $auctionItem->id }}" name="auction_item_id">
+
+            <p>
+
+                <input type="submit" value="{{__('controls.bid')}}">
         </div>
-
-        <label>{{__('forms.phone')}}: </label>
-        <input type="text" name="phone" value="{{ old('phone') }}">
-        <div class="form-error">
-            <strong>{{ $errors->first('phone') }}</strong>
-        </div>
-
-        <label>{{__('forms.bid_amount')}}: </label>
-        <input type="text" name="bid_amount" size="4" value="{{ old('bid_amount') }}">
-        <div class="form-error">
-            <strong>{{ $errors->first('bid_amount') }}</strong>
-            <strong>{{ $errors->first('invalid_bid') }}</strong>
-        </div>
-
-        <input type="hidden" value="{{ $auctionItem->id }}" name="auction_item_id">
-
-        <p>
-
-        <input type="submit" value="{{__('controls.bid')}}">
-
     </form>
 
     <br>
