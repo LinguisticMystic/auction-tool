@@ -11,15 +11,23 @@ class Booking
     /**
      * Handle an incoming request.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \Closure  $next
+     * @param \Illuminate\Http\Request $request
+     * @param \Closure $next
      * @return mixed
      */
     public function handle(Request $request, Closure $next)
     {
+        $previousUrl = \URL::previous();
+
         if (\Session::get('booked') !== true) {
-            return Redirect::back();
+
+            if ($previousUrl === \URL::to('/thanks')) {
+                return redirect('/');
+            } else {
+                return Redirect::back();
+            }
         }
+
         return $next($request);
     }
 }
