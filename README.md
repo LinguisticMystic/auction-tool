@@ -21,3 +21,19 @@ An auctioning tool for adding items to an auction, generating QR codes, and stor
 Requires **imagick** extension: ``sudo apt install php7.4-imagick``
 
 Create user: ``php artisan create:user``
+
+##Hosting on cPanel
+Create `.htaccess` file with the following contents:
+```
+<IFModule mod.rewrite.c>
+RewriteEngine On
+RewriteRule ^(.*)$ public/$1 [L]
+</IFModule>
+```
+
+To create a symbolic link, add this route and open it once:
+```
+Route::get('/linkstorage', function () {
+    Artisan::call('storage:link');
+});
+```
