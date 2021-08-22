@@ -34,6 +34,8 @@
 
         <input type="hidden" value="{{ $auctionItem->id }}" name="auction_item_id">
 
+        <p></p>
+
         <input type="submit" value="{{__('controls.book')}}">
 
     </form>

@@ -83,6 +83,11 @@ p.text-sm.text-gray-700.leading-5 {
 
 .user-login-info {
     text-align: right;
+    margin-bottom: 1.5rem;
+}
+
+input {
+    font-size: 1rem;
 }
 
 @media (min-width: 768px) {

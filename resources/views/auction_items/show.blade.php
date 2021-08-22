@@ -102,6 +102,8 @@
 
         <input type="hidden" value="{{ $auctionItem->id }}" name="auction_item_id">
 
+        <p>
+
         <input type="submit" value="{{__('controls.bid')}}">
 
     </form>
