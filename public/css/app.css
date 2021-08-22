@@ -21,7 +21,7 @@ td a {
 }
 
 .auction-item {
-    width: 360px;
+    width: 100%;
 }
 
 .alert {
@@ -82,5 +82,11 @@ p.text-sm.text-gray-700.leading-5 {
 
 .user-login-info {
     text-align: right;
+}
+
+@media (min-width: 768px) {
+    .auction-item {
+        width: 751px;
+    }
 }
 
