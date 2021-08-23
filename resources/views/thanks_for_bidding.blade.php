@@ -10,6 +10,8 @@
 
     <p>{{ __('content.thanks_for_bidding') }}</p>
 
+    <p>{!! __('content.return') !!}</p>
+
 @endsection
 
 <?php \Session::flush(); ?>

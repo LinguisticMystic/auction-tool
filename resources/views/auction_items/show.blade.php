@@ -118,5 +118,6 @@
     <a href="/auction-items/{{ $auctionItem->id }}/book">{{ __('controls.book_print') }}</a>
 
     <p>❗ {{ __('content.sell_conditions') }}</p>
+    <p>❗ {{ __('content.shipping') }}</p>
 
 @endsection
