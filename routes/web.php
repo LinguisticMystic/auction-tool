@@ -41,6 +41,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 Route::get('/auction-items/{id}', [AuctionItemController::class, 'show']);
+Route::post('/auction-items/search', [AuctionItemController::class, 'search']);
 
 //Bids
 Route::post('/bids/store', [BidController::class, 'store']);

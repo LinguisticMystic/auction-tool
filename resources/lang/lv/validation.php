@@ -165,6 +165,10 @@ return [
         'amount' => [
             'required' => 'Ievadiet daudzumu',
             'min' => 'Daudzumam jābūt vismaz 1'
+        ],
+        'search' => [
+            'required' => 'Ievadiet ID',
+            'integer' => 'Ievadiet skaitli'
         ]
     ],
 

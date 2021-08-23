@@ -17,5 +17,6 @@ return [
     'bid' => 'Place bid',
     'book_print' => 'Book a digital print',
     'book' => 'Book',
-    'change' => 'Change'
+    'change' => 'Change',
+    'search' => 'Search'
 ];

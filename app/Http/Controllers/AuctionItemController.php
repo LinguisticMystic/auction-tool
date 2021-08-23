@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\AuctionItemStoreRequest;
 use App\Http\Requests\AuctionItemUpdateRequest;
+use App\Http\Requests\SearchRequest;
 use App\Models\AuctionItem;
 use App\Models\Bid;
 use BaconQrCode\Renderer\ImageRenderer;
@@ -12,6 +13,7 @@ use BaconQrCode\Renderer\RendererStyle\RendererStyle;
 use BaconQrCode\Writer;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\RedirectResponse;
+use Illuminate\Support\Facades\Redirect;
 use Illuminate\Support\Facades\Storage;
 
 class AuctionItemController extends Controller
@@ -129,5 +131,21 @@ class AuctionItemController extends Controller
 
         return redirect('/admin/dashboard')
             ->with('alert-success', __('page_titles.auction_item') . ' #' . $id . ' ' . __('controls.deleted') . '!');
+    }
+
+    public function search(SearchRequest $request)
+    {
+        $auctionItemId = $request->search;
+
+        $auctionItem = AuctionItem::find($auctionItemId);
+
+        if ($auctionItem === null) {
+            return Redirect::back()
+                ->withErrors(['invalid_id' => __('messages.invalid_id')])
+                ->withInput();
+        } else {
+            return redirect('/auction-items/' . $auctionItem->id);
+        }
+
     }
 }

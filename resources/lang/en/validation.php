@@ -164,6 +164,10 @@ return [
         'amount' => [
             'required' => 'Enter an amount',
             'min' => 'The amount must be at least 1'
+        ],
+        'search' => [
+            'required' => 'Enter ID',
+            'integer' => 'Enter a number'
         ]
     ],
 

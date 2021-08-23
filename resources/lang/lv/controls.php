@@ -17,5 +17,6 @@ return [
     'bid' => 'Veikt likmi',
     'book_print' => 'Rezervēt digitālo druku',
     'book' => 'Rezervēt',
-    'change' => 'Mainīt'
+    'change' => 'Mainīt',
+    'search' => 'Meklēt'
 ];
