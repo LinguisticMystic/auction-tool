@@ -19,5 +19,6 @@ return [
     'table_amount' => 'Amount',
     'thanks_for_bidding' => 'Thank you for bidding. We will contact you soon.',
     'thanks_for_booking' => 'Thank you for making a reservation. We will contact you soon.',
-    'logged_in_as' => 'Logged in as'
+    'logged_in_as' => 'Logged in as',
+    'sell_conditions' => 'The artwork is sold without a frame'
 ];

@@ -18,15 +18,28 @@
 
         <br>
 
-        <label>{{__('forms.starting_bid')}}: </label>
-        <input type="text" name="starting_bid" size="4" value="{{ old('starting_bid') }}">
-        <div class="form-error">
-            <strong>{{ $errors->first('starting_bid') }}</strong>
+        <div class="form">
+            <label>{{__('forms.starting_bid')}}: </label>
+            <input type="text" name="starting_bid" size="4" value="{{ old('starting_bid') }}">
+            <div class="form-error">
+                <strong>{{ $errors->first('starting_bid') }}</strong>
+            </div>
+
+            <br>
+
+            <label>{{__('forms.size')}}: </label>
+            <select name="size">
+                <option value="A1">A1</option>
+                <option value="A2">A2</option>
+                <option value="A3">A3</option>
+                <option value="A4">A4</option>
+            </select>
+
+            <br>
+            <br>
+
+            <input type="submit" value="{{__('controls.submit')}}">
         </div>
-
-        <br>
-
-        <input type="submit" value="{{__('controls.submit')}}">
 
     </form>
 @endsection

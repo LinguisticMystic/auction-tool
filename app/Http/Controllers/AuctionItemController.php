@@ -36,7 +36,8 @@ class AuctionItemController extends Controller
         $auctionItem = AuctionItem::create([
             'starting_bid' => $startingBid,
             'path_to_item_image' => $image,
-            'original_file_name' => $originalFileName
+            'original_file_name' => $originalFileName,
+            'size' => $request->size
         ]);
 
         // Generate QR
@@ -116,7 +117,8 @@ class AuctionItemController extends Controller
         \DB::table('auction_items')
             ->where('id', $id)
             ->update([
-                'starting_bid' => $startingBid
+                'starting_bid' => $startingBid,
+                'size' => $request->size
             ]);
 
         return redirect('/admin/dashboard')

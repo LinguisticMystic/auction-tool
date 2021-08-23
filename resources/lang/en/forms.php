@@ -8,5 +8,6 @@ return [
     'starting_bid' => 'Starting bid',
     'bid_amount' => 'Bid amount',
     'phone' => 'Phone',
-    'amount' => 'Amount'
+    'amount' => 'Amount',
+    'size' => 'Size'
 ];

@@ -19,6 +19,7 @@ class CreateAuctionItemsTable extends Migration
             $table->string('path_to_QR_image')->nullable();
             $table->string('path_to_item_image');
             $table->string('original_file_name');
+            $table->string('size');
             $table->timestamps();
         });
     }

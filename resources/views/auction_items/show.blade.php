@@ -69,6 +69,8 @@
 
     @endif
 
+    <p><strong>{{ __('forms.size') }}: </strong>{{ $auctionItem->size }}</p>
+
     @if($highestBid === 0)
         <p><strong>{{ __('forms.starting_bid') }}: </strong>€{{ $auctionItem->starting_bid / 100 }}</p>
     @else
@@ -114,5 +116,7 @@
     <br>
 
     <a href="/auction-items/{{ $auctionItem->id }}/book">{{ __('controls.book_print') }}</a>
+
+    <p>❗ {{ __('content.sell_conditions') }}</p>
 
 @endsection

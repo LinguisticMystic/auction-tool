@@ -13,7 +13,8 @@ class AuctionItem extends Model
         'starting_bid',
         'path_to_QR_image',
         'path_to_item_image',
-        'original_file_name'
+        'original_file_name',
+        'size'
     ];
 
     public function bids()

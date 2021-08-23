@@ -30,5 +30,6 @@ return [
     'table_amount' => 'Sk.',
     'thanks_for_bidding' => 'Paldies par likmi. Drīzumā ar jums sazināsimies.',
     'thanks_for_booking' => 'Paldies par rezervāciju. Drīzumā ar jums sazināsimies.',
-    'logged_in_as' => 'Ielogojies kā'
+    'logged_in_as' => 'Ielogojies kā',
+    'sell_conditions' => 'Darbs tiek pārdots bez rāmja'
 ];

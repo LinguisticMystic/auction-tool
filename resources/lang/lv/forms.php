@@ -8,5 +8,6 @@ return [
     'starting_bid' => 'Sākuma cena',
     'bid_amount' => 'Likme',
     'phone' => 'Tel.',
-    'amount' => 'Daudzums'
+    'amount' => 'Daudzums',
+    'size' => 'Izmērs'
 ];
