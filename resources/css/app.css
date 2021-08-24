@@ -99,6 +99,14 @@ input {
     width: 40%;
 }
 
+footer {
+    text-align: center;
+    line-height: 0.3;
+    font-size: 0.9rem;
+    color: #222;
+    margin: 4rem 0 1.2rem 0;
+}
+
 @media (min-width: 768px) {
     .auction-item {
         width: 751px;

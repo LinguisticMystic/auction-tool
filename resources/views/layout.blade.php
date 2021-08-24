@@ -54,5 +54,10 @@
 
 @yield('content')
 
+<footer>
+    <p>{{ __('content.made_by') }}</p>
+    <p>{{ __('content.powered_by') }}</p>
+</footer>
+
 </body>
 </html>

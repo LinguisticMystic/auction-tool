@@ -15,7 +15,7 @@ return [
     'delete' => 'Dzēst',
     'print_qr_code' => 'Printēt QR kodu',
     'bid' => 'Veikt likmi',
-    'book_print' => 'Rezervēt digitālo druku',
+    'book_print' => 'Rezervēt digitālo druku (EUR 15)',
     'book' => 'Rezervēt',
     'change' => 'Mainīt',
     'search' => 'Meklēt'

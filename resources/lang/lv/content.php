@@ -26,12 +26,14 @@ return [
     'date' => 'Datums',
     'view' => 'Skatīt',
     'bid_entry' => 'Likmes ieraksts',
-    'book_print_description' => 'Lai iegādātos šī darba digitālo druku, vispirms jāveic rezervācija. Lūdzu, atstājiet savu kontaktinformāciju, un mēs jūs informēsim par drukas pieejamību. Vienas digitālās drukas cena ir <strong>EUR 10</strong>.',
+    'book_print_description' => 'Lai iegādātos šī darba digitālo druku, vispirms jāveic rezervācija. Lūdzu, atstājiet savu kontaktinformāciju, un mēs jūs informēsim par drukas pieejamību. Vienas digitālās drukas cena ir <strong>EUR 15</strong>.',
     'table_amount' => 'Sk.',
     'thanks_for_bidding' => 'Paldies par likmi. Jūsu atbalsts man palīdzēs radīt vēl! Sazināšos ar Jums 2 nedēļu laikā.',
     'thanks_for_booking' => 'Paldies par rezervāciju. Jūsu atbalsts man palīdzēs radīt vēl! Sazināšos ar Jums 2 nedēļu laikā.',
     'return' => 'Pārbaudiet, vai Jūsu likme joprojām ir augstākā, ievadot attiecīgo ID sākuma lapā.',
     'logged_in_as' => 'Ielogojies kā',
     'sell_conditions' => 'Darbs tiek pārdots bez rāmja',
-    'shipping' => 'Piegādes izmaksas cenā nav iekļautas'
+    'shipping' => 'Piegādes izmaksas cenā nav iekļautas',
+    'made_by' => 'Vietni veidoja Aija Pastare',
+    'powered_by' => 'Nodrošina "Brīvās mākslas kustība"'
 ];
