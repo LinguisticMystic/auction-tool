@@ -25,6 +25,20 @@
 
     <img class="auction-item" src="{{ asset('storage/' . $auctionItem->path_to_item_image) }}">
 
+    <div class="gallery-nav">
+        @if ($prev === null)
+            <p style="opacity:0.3;">⬅</p>
+        @else
+            <a href="/auction-items/{{ $prev }}" class="button"><p>⬅</p></a>
+        @endif
+
+        @if ($next === null)
+            <p style="opacity:0.3;">➡</p>
+        @else
+            <a href="/auction-items/{{ $next }}" class="button"><p>➡</p></a>
+        @endif
+    </div>
+
     @if(\Auth::check())
         <p><a href="/auction-items/{{ $auctionItem->id }}/qr" target="_blank">{{ __('controls.print_qr_code') }}</a></p>
 
@@ -72,11 +86,13 @@
     <p><strong>{{ __('forms.size') }}: </strong>{{ $auctionItem->size }}</p>
 
     @if($highestBid === 0)
-        <p><strong>{{ __('content.starting_bid_exhibition_piece') }}: </strong>€{{ $auctionItem->starting_bid / 100 }}</p>
+        <p><strong>{{ __('content.starting_bid_exhibition_piece') }}: </strong>€{{ $auctionItem->starting_bid / 100 }}
+        </p>
         <p><strong>{{ __('content.medium') }}: </strong>{{ __('content.aluminum_composite') }}</p>
     @else
         @if(\Auth::check())
-            <p><strong>{{ __('content.starting_bid_exhibition_piece') }}: </strong>€{{ $auctionItem->starting_bid / 100 }}</p>
+            <p><strong>{{ __('content.starting_bid_exhibition_piece') }}
+                    : </strong>€{{ $auctionItem->starting_bid / 100 }}</p>
             <p><strong>{{ __('content.medium') }}: </strong>{{ __('content.aluminum_composite') }}</p>
         @endif
         <p><strong>{{ __('content.current_bid') }}:</strong> €{{ $highestBid / 100 }}</p>

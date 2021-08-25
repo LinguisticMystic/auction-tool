@@ -76,12 +76,17 @@ class AuctionItemController extends Controller
             }
         }
 
+        $prev = AuctionItem::where('id', '<', $auctionItem->id)->max('id');
+        $next = AuctionItem::where('id', '>', $auctionItem->id)->min('id');
+
         return view('auction_items.show',
             [
                 'auctionItem' => $auctionItem,
                 'highestBid' => $highestBid,
                 'bidHistory' => $bidHistory,
-                'paginationRange' => $paginationRange
+                'paginationRange' => $paginationRange,
+                'prev' => $prev,
+                'next' => $next
             ]);
     }
 
