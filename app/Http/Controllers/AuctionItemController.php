@@ -18,6 +18,16 @@ use Illuminate\Support\Facades\Storage;
 
 class AuctionItemController extends Controller
 {
+    public function index(): View
+    {
+        $auctionItems = AuctionItem::all();
+
+        return view('auction_items.index',
+            [
+                'auctionItems' => $auctionItems
+            ]);
+    }
+
     public function create(): View
     {
         return view('auction_items.create');

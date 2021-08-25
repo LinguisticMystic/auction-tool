@@ -38,5 +38,6 @@ return [
     'powered_by' => 'Nodrošina "Brīvās mākslas kustība"',
     'starting_bid_exhibition_piece' => 'Sākuma cena izstādes eksemplāram',
     'medium' => 'Materiāls',
-    'aluminum_composite' => 'alumīnija kompozīts'
+    'aluminum_composite' => 'alumīnija kompozīts',
+    'full_auction_list' => 'Pilns izsoles darbu saraksts'
 ];

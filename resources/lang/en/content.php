@@ -27,5 +27,6 @@ return [
     'powered_by' => 'Powered by "Brīvās mākslas kustība"',
     'starting_bid_exhibition_piece' => 'Starting bid of exhibiton piece',
     'medium' => 'Medium',
-    'aluminum_composite' => 'aluminum composite'
+    'aluminum_composite' => 'aluminum composite',
+    'full_auction_list' => 'Full list of auction items'
 ];

@@ -40,6 +40,8 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/bookings', [BookingController::class, 'index']);
 });
 
+//Auction items
+Route::get('/auction-items', [AuctionItemController::class, 'index']);
 Route::get('/auction-items/{id}', [AuctionItemController::class, 'show']);
 Route::post('/auction-items/search', [AuctionItemController::class, 'search']);
 

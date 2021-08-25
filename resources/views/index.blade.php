@@ -26,4 +26,8 @@
         </div>
     </form>
 
+    <br>
+
+    <a href="/auction-items">{{ __('content.full_auction_list') }}</a>
+
 @endsection
