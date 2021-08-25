@@ -72,13 +72,19 @@
     <p><strong>{{ __('forms.size') }}: </strong>{{ $auctionItem->size }}</p>
 
     @if($highestBid === 0)
-        <p><strong>{{ __('forms.starting_bid') }}: </strong>€{{ $auctionItem->starting_bid / 100 }}</p>
+        <p><strong>{{ __('content.starting_bid_exhibition_piece') }}: </strong>€{{ $auctionItem->starting_bid / 100 }}</p>
+        <p><strong>{{ __('content.medium') }}: </strong>{{ __('content.aluminum_composite') }}</p>
     @else
         @if(\Auth::check())
-            <p><strong>{{ __('forms.starting_bid') }}: </strong>€{{ $auctionItem->starting_bid / 100 }}</p>
+            <p><strong>{{ __('content.starting_bid_exhibition_piece') }}: </strong>€{{ $auctionItem->starting_bid / 100 }}</p>
+            <p><strong>{{ __('content.medium') }}: </strong>{{ __('content.aluminum_composite') }}</p>
         @endif
         <p><strong>{{ __('content.current_bid') }}:</strong> €{{ $highestBid / 100 }}</p>
     @endif
+
+    <a href="/auction-items/{{ $auctionItem->id }}/book">{{ __('controls.book_print') }}</a>
+
+    <br><br>
 
     <form action="/bids/store" method="post">
         @csrf
@@ -114,8 +120,6 @@
     </form>
 
     <br>
-
-    <a href="/auction-items/{{ $auctionItem->id }}/book">{{ __('controls.book_print') }}</a>
 
     <p>❗ {{ __('content.sell_conditions') }}</p>
     <p>❗ {{ __('content.shipping') }}</p>

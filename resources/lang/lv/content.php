@@ -15,7 +15,7 @@ return [
     <p>Apmeklētājiem būs iespēja atbalstīt jauno mākslinieci rezervējot fotogrāfijas caur mājas lapu, kur arī attālināti
         varēs apskatīt darbus un iegādāties to papīra vai virtuālo versiju.</p>
 
-    <p>Atklāšanas dienā ēkā norisināsies arī Viskaļu Laikmetīgās mākslas festivāls. Vairāk info – <a
+    <p>Atklāšanas dienā ēkā norisināsies arī Viskaļu Laikmetīgās mākslas festivāls. Vairāk info – <a class="partner-link"
             href="https://www.viskali.lv" target="_blank">www.viskali.lv</a></p>
 
     <p>Izstāde veidota ar Valsts kultūrkapitāla fonda atbalstu.</p>',
@@ -26,14 +26,17 @@ return [
     'date' => 'Datums',
     'view' => 'Skatīt',
     'bid_entry' => 'Likmes ieraksts',
-    'book_print_description' => 'Lai iegādātos šī darba digitālo druku, vispirms jāveic rezervācija. Lūdzu, atstājiet savu kontaktinformāciju, un mēs jūs informēsim par drukas pieejamību. Vienas digitālās drukas cena ir <strong>EUR 15</strong>.',
+    'book_print_description' => 'Lai iegādātos šī darba digitālo druku, vispirms jāveic rezervācija. Lūdzu, atstājiet savu kontaktinformāciju, un mēs jūs informēsim par drukas pieejamību. Vienas digitālās drukas cena ir <strong>EUR 10</strong>.',
     'table_amount' => 'Sk.',
     'thanks_for_bidding' => 'Paldies par likmi. Jūsu atbalsts man palīdzēs radīt vēl! Sazināšos ar Jums 2 nedēļu laikā.',
     'thanks_for_booking' => 'Paldies par rezervāciju. Jūsu atbalsts man palīdzēs radīt vēl! Sazināšos ar Jums 2 nedēļu laikā.',
-    'return' => 'Pārbaudiet, vai Jūsu likme joprojām ir augstākā, ievadot attiecīgo ID sākuma lapā.',
+    'return' => 'Pārbaudiet, vai Jūsu likme joprojām ir augstākā, ievadot attiecīgo ID sākuma lapā. Izsole būs aktīva līdz 10. septembrim.',
     'logged_in_as' => 'Ielogojies kā',
     'sell_conditions' => 'Darbs tiek pārdots bez rāmja',
     'shipping' => 'Piegādes izmaksas cenā nav iekļautas',
-    'made_by' => 'Vietni veidoja Aija Pastare',
-    'powered_by' => 'Nodrošina "Brīvās mākslas kustība"'
+    'made_by' => 'Veidoja Bruģinieks',
+    'powered_by' => 'Nodrošina "Brīvās mākslas kustība"',
+    'starting_bid_exhibition_piece' => 'Sākuma cena izstādes eksemplāram',
+    'medium' => 'Materiāls',
+    'aluminum_composite' => 'alumīnija kompozīts'
 ];

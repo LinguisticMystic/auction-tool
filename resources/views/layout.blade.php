@@ -44,6 +44,7 @@
     @if(\Auth::check())
         <div class="user-login-info">
             <?php echo '👤 ' . __('content.logged_in_as') . ' <strong>' . \Auth::user()->name . '</strong>'; ?>
+            <a href="/admin/dashboard"><p>{{ __('page_titles.admin_dashboard') }}</p></a>
             <form action="/logout" method="post">
                 @csrf
                 <button>{{__('controls.log_out')}}</button>

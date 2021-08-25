@@ -15,14 +15,17 @@ return [
     'date' => 'Date',
     'view' => 'View',
     'bid_entry' => 'Bid entry',
-    'book_print_description' => 'To purchase a digital print of this work you must first make a reservation. Please leave your contact information and we will contact you about its availability. The price of one print is <strong>EUR 15</strong>.',
+    'book_print_description' => 'To purchase a digital print of this work you must first make a reservation. Please leave your contact information and we will contact you about its availability. The price of one print is <strong>EUR 10</strong>.',
     'table_amount' => 'Amount',
     'thanks_for_bidding' => 'Thank you for bidding. Your support will help me create more! I will contact you in 2 weeks.',
     'thanks_for_booking' => 'Thank you for making a reservation. Your support will help me create more! I will contact you in 2 weeks.',
-    'return' => 'Check if your bid is still the highest by entering the respective ID on the home page.',
+    'return' => 'Check if your bid is still the highest by entering the respective ID on the home page. The auction will take place until September 10.',
     'logged_in_as' => 'Logged in as',
     'sell_conditions' => 'The artwork is sold without a frame',
     'shipping' => 'Shipping not included in the price',
-    'made_by' => 'Website made by Aija Pastare',
-    'powered_by' => 'Powered by "Brīvās mākslas kustība"'
+    'made_by' => 'Made by Bruģinieks',
+    'powered_by' => 'Powered by "Brīvās mākslas kustība"',
+    'starting_bid_exhibition_piece' => 'Starting bid of exhibiton piece',
+    'medium' => 'Medium',
+    'aluminum_composite' => 'aluminum composite'
 ];

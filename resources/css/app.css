@@ -84,6 +84,8 @@ p.text-sm.text-gray-700.leading-5 {
 .user-login-info {
     text-align: right;
     margin-bottom: 1.5rem;
+    line-height: 0.3;
+    margin-top: 10px;
 }
 
 .form {
@@ -105,6 +107,11 @@ footer {
     font-size: 0.9rem;
     color: #222;
     margin: 4rem 0 1.2rem 0;
+}
+
+.partner-link {
+    color: #000000;
+    text-decoration: none;
 }
 
 @media (min-width: 768px) {
