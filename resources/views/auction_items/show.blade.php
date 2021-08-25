@@ -48,7 +48,7 @@
                 <th>ID</th>
                 <th>{{ __('forms.bid_amount') }}</th>
                 <th>{{ __('content.bidder') }}</th>
-                <th>{{ __('forms.phone') }}</th>
+                <th>Info</th>
                 <th>{{ __('content.date') }}</th>
                 <th>{{ __('controls.delete') }}</th>
             </tr>
@@ -112,7 +112,7 @@
                 <strong>{{ $errors->first('name') }}</strong>
             </div>
 
-            <label>{{__('forms.phone')}}: </label>
+            <label>{{__('forms.contact')}}: </label>
             <input type="text" name="phone" value="{{ old('phone') }}">
             <div class="form-error">
                 <strong>{{ $errors->first('phone') }}</strong>

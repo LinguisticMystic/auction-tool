@@ -144,8 +144,7 @@ return [
             'confirmed' => 'Paroles nesakrīt'
         ],
         'phone' => [
-            'required' => 'Ievadiet tālruņa numuru',
-            'integer' => 'Tālruņa numurs var saturēt tikai ciparus'
+            'required' => 'Ievadiet tālruņa numuru vai e-pastu'
         ],
         'image' => [
             'required' => 'Pievienojiet failu',

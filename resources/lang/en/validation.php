@@ -144,8 +144,7 @@ return [
             'confirmed' => 'Passwords do not match'
         ],
         'phone' => [
-            'required' => 'Enter a phone number',
-            'integer' => 'The phone number can contain only digits'
+            'required' => 'Enter phone or e-mail',
         ],
         'image' => [
             'required' => 'Add a file',

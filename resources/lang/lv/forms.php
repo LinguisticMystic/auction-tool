@@ -9,5 +9,6 @@ return [
     'bid_amount' => 'Likme',
     'phone' => 'Tel.',
     'amount' => 'Daudzums',
-    'size' => 'Izmērs'
+    'size' => 'Izmērs',
+    'contact' => 'Kontakti (tel. vai e-pasts)'
 ];

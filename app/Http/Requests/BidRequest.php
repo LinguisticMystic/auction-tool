@@ -25,7 +25,7 @@ class BidRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'phone' => 'required|integer',
+            'phone' => 'required',
             'bid_amount' => 'required|integer',
             'auction_item_id' => 'required'
         ];

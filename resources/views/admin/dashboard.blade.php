@@ -24,7 +24,7 @@
             <th>ID</th>
             <th>{{ __('content.current_bid') }}</th>
             <th>{{ __('content.bidder') }}</th>
-            <th>{{ __('forms.phone') }}</th>
+            <th>Info</th>
             <th>{{ __('content.view') }}</th>
         </tr>
         @foreach($auctionItems as $id => $auctionItem)

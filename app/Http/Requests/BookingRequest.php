@@ -25,7 +25,7 @@ class BookingRequest extends FormRequest
     {
         return [
             'name' => 'required',
-            'phone' => 'required|integer',
+            'phone' => 'required',
             'amount' => 'required|integer|min:1',
             'auction_item_id' => 'required'
         ];

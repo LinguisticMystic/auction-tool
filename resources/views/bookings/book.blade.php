@@ -21,7 +21,7 @@
                 <strong>{{ $errors->first('name') }}</strong>
             </div>
 
-            <label>{{__('forms.phone')}}: </label>
+            <label>{{__('forms.contact')}}: </label>
             <input type="text" name="phone" value="{{ old('phone') }}">
             <div class="form-error">
                 <strong>{{ $errors->first('phone') }}</strong>

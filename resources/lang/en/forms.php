@@ -9,5 +9,6 @@ return [
     'bid_amount' => 'Bid amount',
     'phone' => 'Phone',
     'amount' => 'Amount',
-    'size' => 'Size'
+    'size' => 'Size',
+    'contact' => 'Contact (phone or e-mail)'
 ];
