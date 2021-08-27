@@ -15,7 +15,7 @@ return [
     'date' => 'Date',
     'view' => 'View',
     'bid_entry' => 'Bid entry',
-    'book_print_description' => 'To purchase a digital print of this work you must first make a reservation. Please leave your contact information and we will contact you about its availability. The price of one print is <strong>EUR 10</strong>.',
+    'book_print_description' => 'To purchase a digital copy of this work you must first make a reservation. Please leave your contact information and we will contact you about the availability of the file. The price of a digital copy is <strong>EUR 10</strong>.',
     'table_amount' => 'Amount',
     'thanks_for_bidding' => 'Thank you for bidding. Your support will help me create more! I will contact you in 2 weeks.',
     'thanks_for_booking' => 'Thank you for making a reservation. Your support will help me create more! I will contact you in 2 weeks.',
@@ -28,5 +28,6 @@ return [
     'starting_bid_exhibition_piece' => 'Starting bid of exhibiton piece',
     'medium' => 'Medium',
     'aluminum_composite' => 'aluminum composite',
-    'full_auction_list' => 'Full list of auction items'
+    'full_auction_list' => 'Full list of auction items',
+    'auction_end' => 'The auction has ended. Thank you for participating.'
 ];

@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <p>{!! __('content.book_print_description') !!} {{ __('content.shipping') }}.</p>
+    <p>{!! __('content.book_print_description') !!}</p>
 
     <img class="auction-item" src="{{ asset('storage/' . $auctionItem->path_to_item_image) }}">
 

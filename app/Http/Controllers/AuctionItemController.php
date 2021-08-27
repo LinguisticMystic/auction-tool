@@ -114,6 +114,14 @@ class AuctionItemController extends Controller
         $prev = AuctionItem::where('id', '<', $auctionItem->id)->max('id');
         $next = AuctionItem::where('id', '>', $auctionItem->id)->min('id');
 
+        $endDate = new \DateTime();
+        $endDate->setTimezone(new \DateTimeZone('GMT'));
+        $endDate->setDate(2021, 9, 11);
+        $endDate->setTime(00, 00);
+
+        $now = new \DateTime();
+        $now->setTimezone(new \DateTimeZone('GMT'));
+
         return view('auction_items.show',
             [
                 'auctionItem' => $auctionItem,
@@ -121,7 +129,9 @@ class AuctionItemController extends Controller
                 'bidHistory' => $bidHistory,
                 'paginationRange' => $paginationRange,
                 'prev' => $prev,
-                'next' => $next
+                'next' => $next,
+                'endDate' => $endDate,
+                'now' => $now
             ]);
     }
 

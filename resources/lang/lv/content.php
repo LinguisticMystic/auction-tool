@@ -26,7 +26,7 @@ return [
     'date' => 'Datums',
     'view' => 'Skatīt',
     'bid_entry' => 'Likmes ieraksts',
-    'book_print_description' => 'Lai iegādātos šī darba digitālo druku, vispirms jāveic rezervācija. Lūdzu, atstājiet savu kontaktinformāciju, un mēs jūs informēsim par drukas pieejamību. Vienas digitālās drukas cena ir <strong>EUR 10</strong>.',
+    'book_print_description' => 'Lai iegādātos šī darba digitālo kopiju, vispirms jāveic rezervācija. Lūdzu, atstājiet savu kontaktinformāciju, un mēs jūs informēsim par faila pieejamību. Digitālās kopijas cena ir <strong>EUR 10</strong>.',
     'table_amount' => 'Sk.',
     'thanks_for_bidding' => 'Paldies par likmi. Jūsu atbalsts man palīdzēs radīt vēl! Sazināšos ar Jums 2 nedēļu laikā.',
     'thanks_for_booking' => 'Paldies par rezervāciju. Jūsu atbalsts man palīdzēs radīt vēl! Sazināšos ar Jums 2 nedēļu laikā.',
@@ -39,5 +39,6 @@ return [
     'starting_bid_exhibition_piece' => 'Sākuma cena izstādes eksemplāram',
     'medium' => 'Materiāls',
     'aluminum_composite' => 'alumīnija kompozīts',
-    'full_auction_list' => 'Pilns izsoles darbu saraksts'
+    'full_auction_list' => 'Pilns izsoles darbu saraksts',
+    'auction_end' => 'Izole beigusies. Paldies par piedalīšanos.'
 ];

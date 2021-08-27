@@ -27,15 +27,15 @@
 
     <div class="gallery-nav">
         @if ($prev === null)
-            <p style="opacity:0.3;">⬅</p>
+            <p style="opacity:0.3;">◄</p>
         @else
-            <a href="/auction-items/{{ $prev }}" class="button"><p>⬅</p></a>
+            <a href="/auction-items/{{ $prev }}" class="button"><p>◄</p></a>
         @endif
 
         @if ($next === null)
-            <p style="opacity:0.3;">➡</p>
+            <p style="opacity:0.3;">►</p>
         @else
-            <a href="/auction-items/{{ $next }}" class="button"><p>➡</p></a>
+            <a href="/auction-items/{{ $next }}" class="button"><p>►</p></a>
         @endif
     </div>
 
@@ -102,42 +102,47 @@
 
     <br><br>
 
-    <form action="/bids/store" method="post">
-        @csrf
+    @if($now < $endDate)
+        <form action="/bids/store" method="post">
+            @csrf
 
-        <div class="form">
-            <label>{{__('forms.name')}}: </label>
-            <input type="text" name="name" value="{{ old('name') }}">
-            <div class="form-error">
-                <strong>{{ $errors->first('name') }}</strong>
+            <div class="form">
+                <label>{{__('forms.name')}}: </label>
+                <input type="text" name="name" value="{{ old('name') }}">
+                <div class="form-error">
+                    <strong>{{ $errors->first('name') }}</strong>
+                </div>
+
+                <label>{{__('forms.contact')}}: </label>
+                <input type="text" name="phone" value="{{ old('phone') }}">
+                <div class="form-error">
+                    <strong>{{ $errors->first('phone') }}</strong>
+                </div>
+
+                <label>{{__('forms.bid_amount')}}: </label>
+                <br>
+                <input class="currency-input" type="text" name="bid_amount" value="{{ old('bid_amount') }}">
+                <div class="form-error">
+                    <strong>{{ $errors->first('bid_amount') }}</strong>
+                    <strong>{{ $errors->first('invalid_bid') }}</strong>
+                </div>
+
+
+                <input type="hidden" value="{{ $auctionItem->id }}" name="auction_item_id">
+
+                <p>
+
+                    <input type="submit" value="{{__('controls.bid')}}">
             </div>
+        </form>
 
-            <label>{{__('forms.contact')}}: </label>
-            <input type="text" name="phone" value="{{ old('phone') }}">
-            <div class="form-error">
-                <strong>{{ $errors->first('phone') }}</strong>
-            </div>
+        <br>
 
-            <label>{{__('forms.bid_amount')}}: </label>
-            <br>
-            <input class="currency-input" type="text" name="bid_amount" value="{{ old('bid_amount') }}">
-            <div class="form-error">
-                <strong>{{ $errors->first('bid_amount') }}</strong>
-                <strong>{{ $errors->first('invalid_bid') }}</strong>
-            </div>
+        <p>❗ {{ __('content.sell_conditions') }}</p>
+        <p>❗ {{ __('content.shipping') }}</p>
 
-
-            <input type="hidden" value="{{ $auctionItem->id }}" name="auction_item_id">
-
-            <p>
-
-                <input type="submit" value="{{__('controls.bid')}}">
-        </div>
-    </form>
-
-    <br>
-
-    <p>❗ {{ __('content.sell_conditions') }}</p>
-    <p>❗ {{ __('content.shipping') }}</p>
+    @else
+        {{ __('content.auction_end') }}
+    @endif
 
 @endsection

@@ -15,7 +15,7 @@ return [
     'delete' => 'Delete',
     'print_qr_code' => 'Print QR code',
     'bid' => 'Place bid',
-    'book_print' => 'Book a digital print (EUR 10)',
+    'book_print' => 'Book a digital copy of the file (EUR 10)',
     'book' => 'Book',
     'change' => 'Change',
     'search' => 'Search'
